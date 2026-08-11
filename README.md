@@ -1,2 +1,301 @@
 # Retro-Songs
 Old bollywood retro songs 
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>thesenvaa | Official Bio Link</title>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0c, #161a23, #0d0e15);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Profile Avatar & Active Indicator */
+    .avatar-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 15px;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Online Active Status Dot */
+    .status-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      width: 18px;
+      height: 18px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      border: 3px solid #0d0e15;
+    }
+
+    .status-badge::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #22c55e;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
+    }
+
+    /* Active Status Text Bar */
+    .active-text-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34, 197, 94, 0.12);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .active-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #22c55e;
+      border-radius: 50%;
+    }
+
+    .username {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .verified-icon {
+      color: #38bdf8;
+      font-size: 1.1rem;
+    }
+
+    .bio {
+      font-size: 0.88rem;
+      color: #a1a1aa;
+      margin-top: 6px;
+      margin-bottom: 24px;
+    }
+
+    /* Links Buttons */
+    .links-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 20px;
+      border-radius: 14px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .link-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .link-left i {
+      font-size: 1.2rem;
+      width: 24px;
+    }
+
+    .arrow-icon {
+      font-size: 0.85rem;
+      color: #71717a;
+      transition: transform 0.3s ease;
+    }
+
+    .link-card:hover .arrow-icon {
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    /* Social Icons Footer */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .social-icons a {
+      color: #9ca3af;
+      font-size: 1.3rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+      transform: scale(1.15);
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 0.75rem;
+      color: #52525b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Profile Image with Green Active Pulse Badge -->
+    <div class="avatar-wrapper">
+      <img src="https://api.dicebear.com/7.x/bottts/svg?seed=thesenvaa" alt="thesenvaa profile" class="avatar-img">
+      <div class="status-badge" title="Active Status"></div>
+    </div>
+
+    <!-- Active Status Text -->
+    <div class="active-text-badge">
+      <span class="active-dot"></span> Active Status: Online
+    </div>
+
+    <!-- Name & Handle -->
+    <h1 class="username">thesenvaa <i class="fa-solid fa-circle-check verified-icon"></i></h1>
+    <p class="bio">Digital Creator | Official Links & Branding</p>
+
+    <!-- Main Bio Links -->
+    <div class="links-wrapper">
+
+      <!-- Instagram Link -->
+      <a href="https://instagram.com/thesenvaa" target="_blank" class="link-card">
+        <div class="link-left">
+          <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+          <span>Instagram (@thesenvaa)</span>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+      </a>
+
+      <!-- YouTube Channel -->
+      <a href="https://youtube.com" target="_blank" class="link-card">
+        <div class="link-left">
+          <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
+          <span>YouTube Channel</span>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+      </a>
+
+      <!-- Spotify / Music -->
+      <a href="https://spotify.com" target="_blank" class="link-card">
+        <div class="link-left">
+          <i class="fa-brands fa-spotify" style="color: #1ed760;"></i>
+          <span>Listen on Spotify</span>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+      </a>
+
+      <!-- Telegram Channel -->
+      <a href="https://t.me/thesenvaa" target="_blank" class="link-card">
+        <div class="link-left">
+          <i class="fa-brands fa-telegram" style="color: #24a1de;"></i>
+          <span>Join Telegram Channel</span>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+      </a>
+
+      <!-- Contact / Inquiry -->
+      <a href="mailto:contact@thesenvaa.com" class="link-card">
+        <div class="link-left">
+          <i class="fa-solid fa-envelope" style="color: #facc15;"></i>
+          <span>Business Inquiry</span>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+      </a>
+
+    </div>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://instagram.com/thesenvaa" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://twitter.com/thesenvaa" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://discord.com" target="_blank"><i class="fa-brands fa-discord"></i></a>
+    </div>
+
+    <div class="footer">
+      © 2026 thesenvaa. All Rights Reserved.
+    </div>
+
+  </div>
+
+</body>
+</html>
+
